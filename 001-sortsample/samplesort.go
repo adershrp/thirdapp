@@ -24,6 +24,5 @@ func main() {
     // returns the index
     ints := sort.SearchInts(xi, 10)
     fmt.Println(ints)
-
     
 }

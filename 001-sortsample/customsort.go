@@ -6,6 +6,7 @@ import (
 )
 
 func main() {
+    
     vento := car{brand: "vw", model: "vento", cc: 1600}
     polo := car{brand: "vw", model: "polo", cc: 1198}
     jetta := car{brand: "vw", model: "jetta", cc: 2000}
@@ -14,14 +15,19 @@ func main() {
     troc := car{brand: "vw", model: "troc", cc: 1500}
     
     cars := []car{vento, polo, jetta, taigun, tiguan, troc}
+    data := byCC(cars)
+    
     fmt.Println("Before Sorting :", cars)
     // conversion of struct []cars to struct []byCC and then sorting
-    sort.Sort(byCC(cars))
+    sort.Sort(data)
     fmt.Println("After Sorting By CC", cars)
     
     sort.Sort(byModel(cars))
     fmt.Println("After Sorting By Model", cars)
     
+    // var cc = byCC{polo, jetta, vento, taigun, troc}
+    // fmt.Println(cc)
+    //
 }
 
 type car struct {
